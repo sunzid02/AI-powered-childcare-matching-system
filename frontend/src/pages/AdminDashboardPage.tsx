@@ -42,7 +42,7 @@ export default function AdminDashboardPage() {
         <div>
           <h1 className="page-title">Admin Dashboard</h1>
           <p className="page-subtitle">
-            Monitor demand, provider supply, cluster distribution, and pressure areas across the childcare system.
+            Monitor request demand, provider capacity, cluster distribution, and shortage areas across the childcare system.
           </p>
         </div>
 
@@ -90,8 +90,8 @@ export default function AdminDashboardPage() {
               }}
             >
               <ChartCard
-                title="Demand vs supply by zone"
-                subtitle="Compare request pressure against available provider capacity."
+                title="Request demand vs available capacity by zone"
+                subtitle="Compare childcare request volume against currently available provider capacity."
               >
                 <DemandSupplyChart data={data.demand_supply} />
               </ChartCard>
@@ -122,7 +122,7 @@ export default function AdminDashboardPage() {
                         fontSize: 13,
                       }}
                     >
-                      {item.shortage}
+                      Shortage: {item.shortage}
                     </span>
                   </div>
                 ))}
@@ -182,7 +182,7 @@ export default function AdminDashboardPage() {
               </div>
 
               <div className="card" style={{ display: "grid", gap: 14 }}>
-                <h2 className="section-title">Zone intensity snapshot</h2>
+                <h2 className="section-title">Zone request and provider snapshot</h2>
                 {data.heatmap.map((item) => (
                   <div
                     key={item.zone}
@@ -197,10 +197,10 @@ export default function AdminDashboardPage() {
                   >
                     <strong>{item.zone}</strong>
                     <div style={{ color: "#5d7288" }}>
-                      Demand intensity: {item.demand_intensity}
+                      Request count: {item.demand_intensity}
                     </div>
                     <div style={{ color: "#5d7288" }}>
-                      Supply intensity: {item.supply_intensity}
+                      Childminder count: {item.supply_intensity}
                     </div>
                   </div>
                 ))}
