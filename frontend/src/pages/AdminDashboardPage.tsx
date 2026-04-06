@@ -77,7 +77,7 @@ export default function AdminDashboardPage() {
               <StatCard label="Total Parents" value={String(data.totals.total_parents)} />
               <StatCard label="Total Childminders" value={String(data.totals.total_childminders)} />
               <StatCard label="Total Requests" value={String(data.totals.total_requests)} />
-              <StatCard label="Total Matches" value={String(data.totals.total_matches)} />
+              <StatCard label="Total Generated Match Results" value={String(data.totals.total_matches)} />
               <StatCard label="Total Shortage" value={String(totalShortage)} />
             </section>
 
